@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option csharp_namespace = "MongoDbTrial.Protos";
+service Products{
+ // Create Product
+ rpc CreateProduct (CreateProductRequest) returns (response){}
+
+ rpc EditProduct (EditProductRequest) returns (response){}
+}
+
+message EditProductRequest{
+ string Id = 1;
+ string ProductName = 2;
+ string ProductDescription = 3;o
+ int32 ProductPrice = 4;
+ int32 ProductStock = 5;
+
+}
+
+message CreateProductRequest{
+ string Id = 1;
+ string ProductName = 2;
+ string ProductDescription = 3;
+ int32 ProductPrice = 4;
+ int32 ProductStock = 5;
+
+}
+
+message response{
+	string Id = 1;
+}
